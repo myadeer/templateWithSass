@@ -1,0 +1,328 @@
+$mainfont :'Poiret One', cursive;
+$scandfont:'Hind Siliguri', sans-serif;
+$maincolor: #2b937c;
+$scandcolor:#fff;
+$pclor:#dad1d1;
+$blackcolor: #635959;
+@mixin myborder($bor,$sol,$col) {
+	border: $bor $sol $col;
+
+}
+%backgroundCover{
+	-webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+}
+%liner{
+		content: '';
+		 width: 4%;
+		 height: 2px;
+
+		 background-color:$maincolor;
+		 position: absolute;
+}
+%mybutton{
+	color:$scandcolor;
+	text-align: center;
+	 margin: auto;
+		background: transparent;
+		transition: all 1s ease-in-out;
+}
+%mymargin{
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+%myhover{
+	transition: all .5s ease-in-out;
+	border: none;
+	color:#FFF;
+	background-color: $maincolor;
+}
+body{
+	height: 2000px;
+}
+//start heading
+.heading{
+	background:url('../img/header.jpg' )center center;
+	@extend%backgroundCover;
+	 .overlay{
+		 background-color:rgba(0,0,0,.5);
+
+	 }
+	.bg-light {
+		background-color:transparent !important;
+		.navbar-brand {
+    color:$scandcolor;
+     }
+		 .navbar-nav {
+		 .active>.nav-link{
+			 color:$maincolor;
+			 font-family: $scandfont;
+			 &:after{@extend%liner ;}
+		 }
+		 .nav-link {
+        color: rgb(228, 216, 216);
+				&:hover{
+					color:$maincolor;
+				}
+
+       }
+	 }
+   }
+  .cen{
+		  h3{
+				color:$scandcolor;
+				@media (min-width: 576px) and (max-width: 767px){font-size: 25px;}
+				@media (max-width:575px) {font-size: 20px;}
+				span{
+					color:$maincolor;
+				}
+			}
+			p{
+				color: $pclor;
+				@media (max-width:575px){font-size: 9px;}
+			}
+		 .btn{
+			 @extend%mybutton ;
+			 @include myborder(2px,solid,#FFF);
+			  position: relative;
+				left:44.3%;
+				top:160px;
+				 @media (min-width: 576px) and (max-width: 767px){top:100px;}
+				&:hover{
+					border:none;
+					background: $maincolor;
+				}
+			}
+
+	 }
+
+}
+//end heading
+//start services
+.servies{
+	@extend%mymargin ;
+	h2{
+		color:$blackcolor;
+		&:after{
+			@extend%liner ;
+			bottom:-120px;
+			left:140px;
+			}
+		}
+		.info{
+			padding-top:50px;
+		}
+
+	h3{
+		color:$blackcolor;
+		margin-bottom: 10px;
+		margin-left: 50px;
+
+	}
+	.cloud{
+		margin-top:20px;
+	}
+	p{
+		color:$pclor;
+		margin-left: 50px;
+	}
+	.fa{
+		 position: relative;
+			color:$maincolor;
+			left: 0;
+			bottom: -60px;
+	}
+	.fa-3x {
+    font-size: 2.5em;
+}
+hr{
+	margin-bottom: 10px;
+	 margin-top:40px;
+}
+}
+//end services
+//sart team
+.team{
+	@extend%mymargin ;
+	h2{
+		color:$blackcolor;
+		&:after{
+			@extend%liner ;
+			top: 50px;
+	   width: 15%;
+	   left: 19px;
+
+			}
+		}
+		p{
+			margin-top: 40px;
+			color:$pclor;
+		}
+		.image{
+			margin-bottom: 10px;
+		}
+		.myhover{
+			background: rgba(0, 195, 152, 0.73);
+		    color: #FFF;
+		    width: 168px;
+		    height: 169px;
+		    position: absolute;
+		    top: 0;
+		    left: 16px;
+				transition: all .5s ease-in-out;
+				opacity: 0;
+				//display: none;
+				h4{
+					text-align: center;
+          margin-top: 60px;
+			}&:hover{
+				   cursor: pointer;
+	        opacity: 1;
+           }
+		}
+}
+//end team
+//start say
+.say{
+	@extend%mymargin ;
+	background: url(../img/say.jpg) center center fixed ;
+	@extend%backgroundCover ;
+	height:500px;
+	.overlay{
+		background-color:rgba(0,0,0,.5);
+		height:500px !important;
+	}
+
+
+	h2{
+		color:$scandcolor;
+		padding-top:15%;
+		&:after{
+			@extend%liner ;
+			 margin-top : 50px;
+			 left: 470px;
+			}
+	}
+	p{
+		color: $pclor;
+		margin-top: 30px;
+	}
+	span{
+		color: $maincolor;
+		font-size: 29px;
+	}
+	h5{
+		margin-top:60px;
+		text-align: center;
+		color:$maincolor;
+	}
+}
+//end say
+//start project
+.project{
+	@extend%mymargin ;
+	h2{
+		color:$blackcolor;
+		padding-top:30px;
+		margin-bottom: 50px;
+		&:after{
+			@extend%liner ;
+			 margin-top : 50px;
+			  left: 140px;
+		 }
+			}
+			.active{
+				@extend%myhover ;
+			}
+			.myul{
+				padding: 9px 20px;
+				margin-left: 16px;
+				color:$pclor;
+				@include myborder(1px,solid,$pclor);
+				border-radius: 5px;
+				&:hover{
+					@extend%myhover ;
+				}
+			}
+			.shuffle-imgs{
+				padding-top: 30px;
+			.con{
+				margin-bottom: 25px;
+			img{
+				width: 100%;
+        height: 100%;
+			}
+			.myhover{
+				background: rgba(0, 195, 152, 0.73);
+			    color: #FFF;
+			    width:349px;
+			    height:205px;
+			    position: absolute;
+			    top: 0;
+			    left: 15px;
+					transition: all .5s ease-in-out;
+					display: none;
+					button{
+						 margin-top: 80px;
+						 @extend %mybutton;
+						 @include myborder(1px,solid,$pclor);
+						 padding: 9px 20px;
+						 border-radius: 5px;
+					}
+				}
+		}
+	}
+}
+//end project
+//start footer
+.footer{
+	padding-top:50px;
+	padding-bottom: 50px;
+	background:url(../img/footer.jpg);
+	background-attachment: fixed;
+	h3{
+		color:$pclor;
+		margin-bottom:25px;
+	}
+	p{
+		color:#807e7e;
+	}
+	li i{
+		@include myborder(1px,solid,#807e7e);
+		margin-top: 30px;
+		margin-bottom: 80px;
+		padding: 10px;
+		margin-left: 20px;
+		color: #807e7e;
+	}
+	.tags ul li{
+		@include myborder(1px,solid,#807e7e);
+		margin-left:10px;
+		padding: 6px 10px;
+		color: #807e7e;
+	}
+	.posts {
+		p{
+			margin-bottom: 0px;
+     margin-top: 0px;
+		}
+		span{
+			color:#3e3b3b;
+		}
+		img{
+			margin-bottom: 10px;
+		}
+	}
+	.blog{
+		ul li{
+			padding-top: 15px;
+			padding-bottom: 9px;
+			color: #807e7e;
+			border-bottom:1px solid #3e3b3b;
+
+		}
+	}
+}
+//end footer
